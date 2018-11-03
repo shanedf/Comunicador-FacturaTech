@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Comunicador_FacturaTech
 {
-    public partial class Form1 : Form
+    public partial class ComunicadorFacturaTech : Form
     {
-        public Form1()
+        public ComunicadorFacturaTech()
         {
             InitializeComponent();
         }
