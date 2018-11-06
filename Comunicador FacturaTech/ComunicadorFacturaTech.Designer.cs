@@ -28,20 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Form1
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Size = new System.Drawing.Size(784, 561);
+            this.splitContainer1.SplitterDistance = 382;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // ComunicadorFacturaTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 703);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.splitContainer1);
+            this.Name = "ComunicadorFacturaTech";
             this.Text = "Comunicador FacturaTech";
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 
