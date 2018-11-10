@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="EmitirComprobante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LayOut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EmitirComprobanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmitirComprobanteResult" type="tns:RespuestaWebservice" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaWebservice">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="XMLFiscalValido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="documentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeErrorLAYOUT" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeEmisor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeDocumentStatus" type="tns:RespuestaCarvajal" />
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeRespuestaCUFE" type="tns:RespuestaCUFE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaCarvajal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="processName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="processStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="processDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="messageType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legalStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="businessStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="governmentResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="governmentResponseDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RespuestaCUFE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUFE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GenerarPDF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerarPDFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerarPDFResult" type="tns:RespuestaGeneral" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaGeneral">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="downloadData" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescargarXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescargarXMLResult" type="tns:RespuestaGeneral" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDocumentStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDocumentStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDocumentStatusResult" type="tns:RespuestaConsultaDocumentStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaConsultaDocumentStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MensajeDocumentStatus" type="tns:RespuestaCarvajal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DescargarCUFE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarCUFEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescargarCUFEResult" type="tns:RespuestaGeneral" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarAcuse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="documentNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="acountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="documentType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoAcuse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescargarAcuseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DescargarAcuseResult" type="tns:RespuestaGeneral" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="EmitirComprobanteSoapIn">
+    <wsdl:part name="parameters" element="tns:EmitirComprobante" />
+  </wsdl:message>
+  <wsdl:message name="EmitirComprobanteSoapOut">
+    <wsdl:part name="parameters" element="tns:EmitirComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerarPDFSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerarPDF" />
+  </wsdl:message>
+  <wsdl:message name="GenerarPDFSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerarPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:DescargarXML" />
+  </wsdl:message>
+  <wsdl:message name="DescargarXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:DescargarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDocumentStatus" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDocumentStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDocumentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarCUFESoapIn">
+    <wsdl:part name="parameters" element="tns:DescargarCUFE" />
+  </wsdl:message>
+  <wsdl:message name="DescargarCUFESoapOut">
+    <wsdl:part name="parameters" element="tns:DescargarCUFEResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarAcuseSoapIn">
+    <wsdl:part name="parameters" element="tns:DescargarAcuse" />
+  </wsdl:message>
+  <wsdl:message name="DescargarAcuseSoapOut">
+    <wsdl:part name="parameters" element="tns:DescargarAcuseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSfacturatechSoap">
+    <wsdl:operation name="EmitirComprobante">
+      <wsdl:input message="tns:EmitirComprobanteSoapIn" />
+      <wsdl:output message="tns:EmitirComprobanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPDF">
+      <wsdl:input message="tns:GenerarPDFSoapIn" />
+      <wsdl:output message="tns:GenerarPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarXML">
+      <wsdl:input message="tns:DescargarXMLSoapIn" />
+      <wsdl:output message="tns:DescargarXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumentStatus">
+      <wsdl:input message="tns:ConsultaDocumentStatusSoapIn" />
+      <wsdl:output message="tns:ConsultaDocumentStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarCUFE">
+      <wsdl:input message="tns:DescargarCUFESoapIn" />
+      <wsdl:output message="tns:DescargarCUFESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DescargarAcuse">
+      <wsdl:input message="tns:DescargarAcuseSoapIn" />
+      <wsdl:output message="tns:DescargarAcuseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSfacturatechSoap" type="tns:WSfacturatechSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmitirComprobante">
+      <soap:operation soapAction="http://tempuri.org/EmitirComprobante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPDF">
+      <soap:operation soapAction="http://tempuri.org/GenerarPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarXML">
+      <soap:operation soapAction="http://tempuri.org/DescargarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumentStatus">
+      <soap:operation soapAction="http://tempuri.org/ConsultaDocumentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarCUFE">
+      <soap:operation soapAction="http://tempuri.org/DescargarCUFE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarAcuse">
+      <soap:operation soapAction="http://tempuri.org/DescargarAcuse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSfacturatechSoap12" type="tns:WSfacturatechSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EmitirComprobante">
+      <soap12:operation soapAction="http://tempuri.org/EmitirComprobante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarPDF">
+      <soap12:operation soapAction="http://tempuri.org/GenerarPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarXML">
+      <soap12:operation soapAction="http://tempuri.org/DescargarXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDocumentStatus">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaDocumentStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarCUFE">
+      <soap12:operation soapAction="http://tempuri.org/DescargarCUFE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DescargarAcuse">
+      <soap12:operation soapAction="http://tempuri.org/DescargarAcuse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSfacturatech">
+    <wsdl:port name="WSfacturatechSoap" binding="tns:WSfacturatechSoap">
+      <soap:address location="http://69.160.41.171/WSfacturatech.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSfacturatechSoap12" binding="tns:WSfacturatechSoap12">
+      <soap12:address location="http://69.160.41.171/WSfacturatech.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

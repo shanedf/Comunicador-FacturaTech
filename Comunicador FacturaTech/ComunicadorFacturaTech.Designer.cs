@@ -29,8 +29,16 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.elegirFactura = new System.Windows.Forms.OpenFileDialog();
+            this.detallesRespuesta = new System.Windows.Forms.DataGridView();
+            this.Parametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detallesRespuesta)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -38,9 +46,57 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.detallesRespuesta);
             this.splitContainer1.Size = new System.Drawing.Size(784, 561);
-            this.splitContainer1.SplitterDistance = 382;
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(159, 61);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // elegirFactura
+            // 
+            this.elegirFactura.FileName = "elegirFactura";
+            this.elegirFactura.Title = "Elegir Factura a Emitir";
+            // 
+            // detallesRespuesta
+            // 
+            this.detallesRespuesta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detallesRespuesta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Parametro,
+            this.Estado});
+            this.detallesRespuesta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.detallesRespuesta.Location = new System.Drawing.Point(0, 0);
+            this.detallesRespuesta.Name = "detallesRespuesta";
+            this.detallesRespuesta.RowHeadersVisible = false;
+            this.detallesRespuesta.Size = new System.Drawing.Size(580, 561);
+            this.detallesRespuesta.TabIndex = 1;
+            // 
+            // Parametro
+            // 
+            this.Parametro.HeaderText = "Parametro Respusta";
+            this.Parametro.Name = "Parametro";
+            this.Parametro.Width = 150;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 400;
             // 
             // ComunicadorFacturaTech
             // 
@@ -50,8 +106,11 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "ComunicadorFacturaTech";
             this.Text = "Comunicador FacturaTech";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.detallesRespuesta)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -59,6 +118,11 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.OpenFileDialog elegirFactura;
+        private System.Windows.Forms.DataGridView detallesRespuesta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parametro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
 
