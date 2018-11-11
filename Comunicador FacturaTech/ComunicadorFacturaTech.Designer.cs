@@ -30,10 +30,8 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button1 = new System.Windows.Forms.Button();
-            this.elegirFactura = new System.Windows.Forms.OpenFileDialog();
             this.detallesRespuesta = new System.Windows.Forms.DataGridView();
-            this.Parametro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elegirFactura = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -68,17 +66,9 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // elegirFactura
-            // 
-            this.elegirFactura.FileName = "elegirFactura";
-            this.elegirFactura.Title = "Elegir Factura a Emitir";
-            // 
             // detallesRespuesta
             // 
             this.detallesRespuesta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detallesRespuesta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Parametro,
-            this.Estado});
             this.detallesRespuesta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.detallesRespuesta.Location = new System.Drawing.Point(0, 0);
             this.detallesRespuesta.Name = "detallesRespuesta";
@@ -86,17 +76,10 @@
             this.detallesRespuesta.Size = new System.Drawing.Size(580, 561);
             this.detallesRespuesta.TabIndex = 1;
             // 
-            // Parametro
+            // elegirFactura
             // 
-            this.Parametro.HeaderText = "Parametro Respusta";
-            this.Parametro.Name = "Parametro";
-            this.Parametro.Width = 150;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 400;
+            this.elegirFactura.FileName = "elegirFactura";
+            this.elegirFactura.Title = "Elegir Factura a Emitir";
             // 
             // ComunicadorFacturaTech
             // 
@@ -121,8 +104,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog elegirFactura;
         private System.Windows.Forms.DataGridView detallesRespuesta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parametro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
 
